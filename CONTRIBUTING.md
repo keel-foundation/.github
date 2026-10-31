@@ -13,15 +13,15 @@ Thank you for helping build a creator-owned video ecosystem.
 
 1. Fork the repository or create a branch if you have write access.
 2. Keep the change focused. One logical change per pull request.
-3. Add or update tests where the repository has a test suite.
+3. Run the repository checks and add or update tests. Python repos run `ruff` and `pytest`; Go repos run `gofmt`, `go vet`, and `go test`; the web repo runs `npm test`, `npm run typecheck`, and `npm run build`; spec changes run `python scripts/validate_schemas.py`.
 4. Update documentation when behavior changes.
-5. Sign off your commits with the Developer Certificate of Origin (DCO):
+5. Sign off every commit with the Developer Certificate of Origin (DCO). Web-interface commits must also use the sign-off option:
 
 ```sh
 git commit -s -m "feat: add video manifest endpoint"
 ```
 
-Do not add a CLA. Do not commit secrets, credentials, private governance documents, or customer data.
+Do not add a CLA. Do not commit secrets, credentials, private governance documents, or customer data. Pull requests that fail formatting, tests, schema validation, or build checks are not mergeable once required checks are enabled.
 
 ## Review
 

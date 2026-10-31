@@ -1,0 +1,12 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    uses: ./.github/workflows/docs-ci.yml

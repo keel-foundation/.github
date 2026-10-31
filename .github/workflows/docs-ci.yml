@@ -1,0 +1,41 @@
+name: docs-ci
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check local markdown links
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+
+          skip = {".git", ".next", ".venv", "node_modules", "__pycache__", ".pytest_cache"}
+          pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+          schemes = ("http://", "https://", "mailto:", "tel:", "data:", "javascript:")
+          broken = []
+          for path in Path(".").rglob("*.md"):
+              if any(part in skip for part in path.parts):
+                  continue
+              for raw in pattern.findall(path.read_text(encoding="utf-8")):
+                  target = raw.strip()
+                  if not target or target.startswith("#") or target.startswith("/"):
+                      continue
+                  if target.startswith(schemes):
+                      continue
+                  local = target.split("#", 1)[0].split("?", 1)[0]
+                  if not (path.parent / local).exists():
+                      broken.append((path, target))
+          for path, target in broken:
+              print(f"{path}: broken link {target}", file=sys.stderr)
+          sys.exit(1 if broken else 0)
+          PY
