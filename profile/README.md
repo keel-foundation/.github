@@ -1,0 +1,28 @@
+# TubeKeel
+
+**An even keel for creators.**
+
+TubeKeel is an open, federated video protocol built around creator ownership, real due process, content protection, and transparent payouts.
+
+## What we are building
+
+- **Creator-owned:** your archive, your audience relationship, your data, and a real exit.
+- **Moderation-first:** specific reasons, human review before irreversible harm, real appeals, and published error rates.
+- **Protected:** piracy, impersonation, spam, scams, and fraud are treated as serious harms.
+- **Federated:** PeerTube-compatible where possible; no single instance is the only gateway.
+
+## Repositories
+
+- [`keel-dev`](https://github.com/keel-foundation/keel-dev) — start here for local development.
+- [`keel-spec`](https://github.com/keel-foundation/keel-spec) — protocol, RFCs, schemas.
+- [`keel-core`](https://github.com/keel-foundation/keel-core) — API and domain.
+- [`keel-pipeline`](https://github.com/keel-foundation/keel-pipeline) — media pipeline.
+- [`keel-web`](https://github.com/keel-foundation/keel-web) — viewer and creator studio.
+- [`keel-moderation`](https://github.com/keel-foundation/keel-moderation) — moderation and content protection.
+- [`keel-docs`](https://github.com/keel-foundation/keel-docs) — public documentation.
+
+Governance, production infrastructure, and security operations are maintained in private repositories. The Constitution and whitepaper are not public until ratification.
+
+## Status
+
+Pre-alpha. The repositories are scaffolds; only health endpoints and a landing page exist.

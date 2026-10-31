@@ -1,0 +1,21 @@
+name: compose-ci
+
+on:
+  workflow_call:
+    inputs:
+      compose_file:
+        description: Path to the compose file
+        required: false
+        type: string
+        default: docker-compose.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate compose
+        run: docker compose -f "${{ inputs.compose_file }}" config
