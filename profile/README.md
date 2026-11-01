@@ -17,14 +17,23 @@ KeelTube is an open, federated video protocol built around creator ownership, re
 - [`keel-spec`](https://github.com/keel-foundation/keel-spec) — protocol, RFCs, schemas.
 - [`keel-core`](https://github.com/keel-foundation/keel-core) — API and domain.
 - [`keel-pipeline`](https://github.com/keel-foundation/keel-pipeline) — media pipeline.
-- [`keel-web`](https://github.com/keel-foundation/keel-web) — viewer and creator studio.
 - [`keel-moderation`](https://github.com/keel-foundation/keel-moderation) — moderation and content protection.
 - [`keel-docs`](https://github.com/keel-foundation/keel-docs) — public documentation.
 
-Governance, production infrastructure, and security operations are maintained in private repositories. The Constitution and whitepaper are not public until ratification.
+### Private repositories
+
+These repositories are maintainer-only while the project is pre-alpha:
+
+- `keel-web` — viewer, creator studio, Cases & appeals, and the versioned video editor. Private until the maintainer pool is established.
+- `keel-governance` — Constitution, whitepaper, board, finance, and legal records.
+- `keel-infra` — production infrastructure, environments, and runbooks.
+- `keel-security` — threat model, incident response, and audits.
+- `keel-branding` — brand system, source assets, and decisions.
+
+The Constitution and whitepaper are not public until ratification.
 
 ## Status
 
-Pre-alpha. The local creator-appeal demo is working: a synthetic automated signal, a case, an enforcement action, an independent appeal review, and an append-only hash-chained ledger with verification and export. A PostgreSQL-backed core read API and a fully built web preview (feed, watch, channels, search, library, creator studio, and moderation console) are also working. Upload, transcoding, HLS, subscriptions, federation, payouts, content protection, and the production moderation console are not implemented yet.
+Pre-alpha. The local creator-appeal demo is working: a synthetic automated signal, a case, an enforcement action, an independent appeal review, and an append-only hash-chained ledger with verification and export. A PostgreSQL-backed core read API is also working. The web client is private and maintainer-only while the maintainer pool is established. Upload, transcoding, HLS, subscriptions, federation, payouts, content protection, and the production staff moderation portal are not implemented yet.
 
 Start with [`keel-dev`](https://github.com/keel-foundation/keel-dev) for the local demo, [`keel-docs`](https://github.com/keel-foundation/keel-docs) for creator and developer guidance, and [`keel-spec`](https://github.com/keel-foundation/keel-spec) for RFC-0001 and the schemas.
