@@ -25,6 +25,6 @@ Governance, production infrastructure, and security operations are maintained in
 
 ## Status
 
-Pre-alpha. The local creator-appeal demo is working: a synthetic automated signal, a case, an enforcement action, an independent appeal review, and an append-only hash-chained ledger with verification and export. Upload, transcoding, federation, payouts, content protection, and the production moderation console are not implemented yet.
+Pre-alpha. The local creator-appeal demo is working: a synthetic automated signal, a case, an enforcement action, an independent appeal review, and an append-only hash-chained ledger with verification and export. A PostgreSQL-backed core and a local watch page are also working. Upload, transcoding, HLS, subscriptions, federation, payouts, content protection, and the production moderation console are not implemented yet.
 
 Start with [`keel-dev`](https://github.com/keel-foundation/keel-dev) for the local demo, [`keel-docs`](https://github.com/keel-foundation/keel-docs) for creator and developer guidance, and [`keel-spec`](https://github.com/keel-foundation/keel-spec) for RFC-0001 and the schemas.

@@ -13,7 +13,7 @@ Thank you for helping build a creator-owned video ecosystem.
 
 1. Fork the repository or create a branch if you have write access.
 2. Keep the change focused. One logical change per pull request.
-3. Run the repository checks and add or update tests. Python repos run `ruff` and `pytest`; Go repos run `gofmt`, `go vet`, and `go test`; the web repo runs `npm test`, `npm run typecheck`, and `npm run build`; spec changes run `python scripts/validate_schemas.py`.
+3. Run the repository checks and add or update tests. Python repos run `ruff` and `pytest`; Go repos run `gofmt`, `go vet`, and `go test`; `keel-core` database tests need `TUBEKEEL_TEST_DATABASE_URL` and `go test -p 1 ./...`; the web repo runs `npm test`, `npm run typecheck`, `npm run build`, and `npm run format:check`, with `npm run test:e2e` for watch/player changes; spec changes run `python scripts/validate_schemas.py`.
 4. Update documentation when behavior changes.
 5. Sign off every commit with the Developer Certificate of Origin (DCO). Web-interface commits must also use the sign-off option:
 
