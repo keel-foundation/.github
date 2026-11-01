@@ -1,8 +1,8 @@
-# TubeKeel
+# KeelTube
 
 **An even keel for creators.**
 
-TubeKeel is an open, federated video protocol built around creator ownership, real due process, content protection, and transparent payouts.
+KeelTube is an open, federated video protocol built around creator ownership, real due process, content protection, and transparent payouts.
 
 ## What we are building
 

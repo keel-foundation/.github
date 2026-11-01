@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a reproducible bug in a TubeKeel repo
+description: Report a reproducible bug in a KeelTube repo
 title: "bug: "
 labels: ["bug", "triage"]
 body:
