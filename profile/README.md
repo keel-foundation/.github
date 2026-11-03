@@ -15,10 +15,12 @@ KeelTube is an open, federated video protocol built around creator ownership, re
 
 - [`keel-dev`](https://github.com/keel-foundation/keel-dev) — start here for local development.
 - [`keel-spec`](https://github.com/keel-foundation/keel-spec) — protocol, RFCs, schemas.
-- [`keel-core`](https://github.com/keel-foundation/keel-core) — API and domain.
-- [`keel-pipeline`](https://github.com/keel-foundation/keel-pipeline) — media pipeline.
+- [`keel-core`](https://github.com/keel-foundation/keel-core) — API, domain, and media worker.
 - [`keel-moderation`](https://github.com/keel-foundation/keel-moderation) — moderation and content protection.
 - [`keel-docs`](https://github.com/keel-foundation/keel-docs) — public documentation.
+
+Media ingest, scanning, transcoding, and HLS packaging now live in `keel-core` (`cmd/worker`);
+there is no separate pipeline repository.
 
 ### Private repositories
 
@@ -34,6 +36,18 @@ The Constitution and whitepaper are not public until ratification.
 
 ## Status
 
-Pre-alpha. The local creator-appeal demo is working: a synthetic automated signal, a case, an enforcement action, an independent appeal review, and an append-only hash-chained ledger with verification and export. A PostgreSQL-backed core read API is also working. The web client is private and maintainer-only while the maintainer pool is established. Upload, transcoding, HLS, subscriptions, federation, payouts, content protection, and the production staff moderation portal are not implemented yet.
+Pre-alpha. The local creator-appeal demo is working: a synthetic automated signal, a case, an
+enforcement action, an independent appeal review, and an append-only hash-chained ledger with
+verification and export.
+
+`keel-core` is PostgreSQL-backed with pgvector and implements identity and sessions, catalog and
+discovery, subscriptions, comments, reactions, saves, watch history, creator uploads, FFmpeg/HLS
+processing in a separate media worker, watch telemetry, creator analytics, and creator
+notifications. `keel-moderation` provides creator-scoped cases, actions, appeals, and ledger reads
+with reviewer independence. The web client is private and maintainer-only; it is fully built
+against local mock data and wiring it to these APIs is the next integration step.
+
+Federation, payouts, production OIDC/social providers, and the staff moderation portal are not
+implemented yet.
 
 Start with [`keel-dev`](https://github.com/keel-foundation/keel-dev) for the local demo, [`keel-docs`](https://github.com/keel-foundation/keel-docs) for creator and developer guidance, and [`keel-spec`](https://github.com/keel-foundation/keel-spec) for RFC-0001 and the schemas.
